@@ -8,6 +8,9 @@
     <link rel = "stylesheet" href="index.css">
 </head>
 <body>
+    <h3>Current Time in the Zone:</h3>
+    <h3 id="times"></h3>
+    
     <div class="clock"> 
         <div class="clock-face">
             <div class="hand hour-hand"></div>
@@ -22,6 +25,9 @@
             
             function setDate(){
                 const now = new Date();
+
+                const localTime = now.toLocaleTimeString();
+                document.getElementById("times").innerHTML = now.toString();
 
                 const seconds = now.getSeconds();
                 const secondDegrees = ((seconds/60)* 360) + 90;
